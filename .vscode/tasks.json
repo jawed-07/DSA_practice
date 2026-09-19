@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+
+    "tasks": [
+        {
+            "label": "DSA Run",
+
+            "type": "shell",
+
+            "command": "cmd.exe",
+
+            "args": [
+                "/c",
+                "g++ -std=c++17 \"${workspaceFolder}\\demo.cpp\" -o \"${workspaceFolder}\\demo.exe\" && \"${workspaceFolder}\\demo.exe\" < \"${workspaceFolder}\\input.txt\" > \"${workspaceFolder}\\output.txt\""
+            ],
+
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true,
+                "close": true
+            },
+
+            "problemMatcher": [
+                "$gcc"
+            ],
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
