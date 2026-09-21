@@ -38,6 +38,26 @@ int main(){
         }
     }
     cout<<"Min Ele of arr: "<<min<<endl;
+
+    //Let's find 2nd Max and min of arr
+    int min1=arr[0];
+    int min2=arr[1];
+    if(min1>min2){
+        int temp=min1;
+        min1=min2;
+        min2=temp;
+    }
+    for (int i=2;i<n;++i){
+        if(arr[i]<min1){
+            min2=min1;
+            min1=arr[i];
+        }
+        else if(arr[i]<min2 && arr[i]!=min1){
+            min2=arr[i];
+            
+        }
+    }
+    cout<<"Second Min of arr is: "<<min2<<endl;
     return 0;
 
 }
