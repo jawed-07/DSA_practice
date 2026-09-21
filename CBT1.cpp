@@ -15,16 +15,29 @@ int main(){
     } //normal hm print krre
 
     cout<<endl;
-
+    
     //reverse main krne ke liye
-
+    
     for(int i=n-1;i>=0;i--){
         cout<<arr[i]<<" ";
     }
-
-
-
+    cout<<endl;
+    
+    //max and min of arr
+    int max=arr[0];
+    for (int i=0;i<n;++i){
+        if (arr[i]>max){
+            max=arr[i];
+        }
+    }
+    cout<<"Max Ele of arr: "<<max<<endl;
+    int min=arr[0];
+    for(int i=0;i<n;++i){
+        if(arr[i]<max){
+            min=arr[0];
+        }
+    }
+    cout<<"Min Ele of arr: "<<min<<endl;
     return 0;
-
 
 }
