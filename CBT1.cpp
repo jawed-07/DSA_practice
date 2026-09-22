@@ -58,6 +58,27 @@ int main(){
         }
     }
     cout<<"Second Min of arr is: "<<min2<<endl;
+    //Second max of given arr
+    int max1=arr[0];
+    int max2=arr[1];
+    if(max1<max2){
+        int temp=max1;
+        max1=max2;
+        max2=temp;
+    }
+    for(int i=2;i<n;++i){
+        if(arr[i]>max1){
+            max2=max1;
+            max1=arr[i];
+        }
+        else if(arr[i]>max2 && arr[i]!=max1){
+            max2=arr[i];
+            
+        }
+    }
+    cout<<"Second Max of arr is: "<<max2<<endl;
+        
+
     return 0;
 
 }
