@@ -135,144 +135,177 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// struct Node {
+//     int data;
+//     Node* next;
+
+//     Node(int val) : data(val), next(nullptr) {}
+// };
+
+// int main() {
+//     Node* head = nullptr;
+
+//     // Insert at Front
+//     cout << "Inserting at Front: 10, 20, 30" << endl;
+//     for (int val : {10, 20, 30}) {
+//         Node* newNode = new Node(val);
+//         newNode->next = head;
+//         head = newNode;
+//     }
+
+//     cout << "List after insert front: ";
+//     Node* temp = head;
+//     while (temp) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout << endl;
+
+//     // Insert at Back
+//     cout << "Inserting at Back: 40, 50" << endl;
+//     for (int val : {40, 50}) {
+//         Node* newNode = new Node(val);
+//         if (!head) {
+//             head = newNode;
+//         } else {
+//             temp = head;
+//             while (temp->next) {
+//                 temp = temp->next;
+//             }
+//             temp->next = newNode;
+//         }
+//     }
+
+//     cout << "List after insert back: ";
+//     temp = head;
+//     while (temp) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout << endl;
+
+//     // Find Middle
+//     Node* slow = head;
+//     Node* fast = head;
+
+//     while (fast && fast->next) {
+//         slow = slow->next;
+//         fast = fast->next->next;
+//     }
+
+//     cout << "Middle element: " << slow->data << endl;
+
+//     // Delete Middle
+//     if (head && head->next) {
+//         slow = head;
+//         fast = head;
+//         Node* prev = nullptr;
+
+//         while (fast && fast->next) {
+//             prev = slow;
+//             slow = slow->next;
+//             fast = fast->next->next;
+//         }
+
+//         if (prev) {
+//             prev->next = slow->next;
+//             delete slow;
+//         }
+//     }
+
+//     cout << "List after deleting middle: ";
+//     temp = head;
+//     while (temp) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout << endl;
+
+//     // Delete Second Last
+//     if (head && head->next && head->next->next) {
+//         temp = head;
+//         while (temp->next->next->next) {
+//             temp = temp->next;
+//         }
+
+//         Node* toDelete = temp->next;
+//         temp->next = temp->next->next;
+//         delete toDelete;
+//     }
+
+//     cout << "List after deleting second last: ";
+//     temp = head;
+//     while (temp) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout << endl;
+
+//     // Reverse Linked List
+//     Node* prev = nullptr;
+//     Node* curr = head;
+
+//     while (curr) {
+//         Node* nextTemp = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = nextTemp;
+//     }
+//     head = prev;
+
+//     cout << "List after reversing: ";
+//     temp = head;
+//     while (temp) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout << endl;
+
+//     // Cleanup memory
+//     while (head) {
+//         Node* toDelete = head;
+//         head = head->next;
+//         delete toDelete;
+//     }
+
+//     return 0;
+// }
+
+
+
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-struct Node {
-    int data;
-    Node* next;
+int main(){
+    int arr[]={10,30,20,50,40,10,20,50,20,30,20,20,10,40,60,80,40,20,20,20,60,};
+    int n=sizeof(arr)/sizeof(arr[0]);
 
-    Node(int val) : data(val), next(nullptr) {}
-};
-
-int main() {
-    Node* head = nullptr;
-
-    // Insert at Front
-    cout << "Inserting at Front: 10, 20, 30" << endl;
-    for (int val : {10, 20, 30}) {
-        Node* newNode = new Node(val);
-        newNode->next = head;
-        head = newNode;
-    }
-
-    cout << "List after insert front: ";
-    Node* temp = head;
-    while (temp) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-
-    // Insert at Back
-    cout << "Inserting at Back: 40, 50" << endl;
-    for (int val : {40, 50}) {
-        Node* newNode = new Node(val);
-        if (!head) {
-            head = newNode;
-        } else {
-            temp = head;
-            while (temp->next) {
-                temp = temp->next;
+    sort(arr , arr+n);
+    int maxCount=1,maxNum=arr[0];
+    int currCount=1, currNum=arr[0];
+    for(int i=1; i<n; i++){
+        if(arr[i]==currNum){
+            currCount++;
+        }
+        else{
+            if(currCount>maxCount){
+                maxCount=currCount;
+                maxNum=currNum;
             }
-            temp->next = newNode;
+            currCount=1;
+            currNum=arr[i];
         }
     }
-
-    cout << "List after insert back: ";
-    temp = head;
-    while (temp) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-
-    // Find Middle
-    Node* slow = head;
-    Node* fast = head;
-
-    while (fast && fast->next) {
-        slow = slow->next;
-        fast = fast->next->next;
+    if(currCount>maxCount){
+        maxCount=currCount;
+        maxNum=currNum;
     }
 
-    cout << "Middle element: " << slow->data << endl;
+    cout<<"Highest Number: "<<maxNum<<endl;
+    cout<<"MaxCount: "<<maxCount<<endl;
 
-    // Delete Middle
-    if (head && head->next) {
-        slow = head;
-        fast = head;
-        Node* prev = nullptr;
-
-        while (fast && fast->next) {
-            prev = slow;
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-
-        if (prev) {
-            prev->next = slow->next;
-            delete slow;
-        }
-    }
-
-    cout << "List after deleting middle: ";
-    temp = head;
-    while (temp) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-
-    // Delete Second Last
-    if (head && head->next && head->next->next) {
-        temp = head;
-        while (temp->next->next->next) {
-            temp = temp->next;
-        }
-
-        Node* toDelete = temp->next;
-        temp->next = temp->next->next;
-        delete toDelete;
-    }
-
-    cout << "List after deleting second last: ";
-    temp = head;
-    while (temp) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-
-    // Reverse Linked List
-    Node* prev = nullptr;
-    Node* curr = head;
-
-    while (curr) {
-        Node* nextTemp = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = nextTemp;
-    }
-    head = prev;
-
-    cout << "List after reversing: ";
-    temp = head;
-    while (temp) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-
-    // Cleanup memory
-    while (head) {
-        Node* toDelete = head;
-        head = head->next;
-        delete toDelete;
-    }
-
-    return 0;
 }
-
-
-
