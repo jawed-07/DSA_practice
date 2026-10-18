@@ -10,10 +10,17 @@ int main(){
         }
         cout<<endl;
     }
+    // 2. Print row-wise sums: Find the sum of each row.
+    for(int i=0;i<3;i++){
+        int sum=0;
+        for (int j=0;j<3;j++){
+            sum+=arr[i][j];
+        }
+        cout<<"Sum of"<<i+1<<" row is: "<<sum<<endl;
+    }
     return 0;
 }
 
-// 2. Print row-wise sums: Find the sum of each row.
 // 3. Print column-wise sums: Find the sum of each column.
 // 4. Find the maximum: Print the largest element in the matrix.
 // 5. Find the diagonal sum: Calculate \(1+5+9\).
