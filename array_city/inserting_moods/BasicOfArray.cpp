@@ -18,4 +18,11 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+
+    // Lets reverse the array
+    cout<<"Reversed Arrya: ";
+    for(int i=n-1;i>=0;--i){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
 }
