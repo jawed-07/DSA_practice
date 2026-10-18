@@ -54,5 +54,17 @@ int main(){
     cout<<"Sum: "<<sum<<endl;
     cout<<"Product: "<<pro<<endl;
 
-    
+    //print max and min of array
+    int max=arr[0];
+    int min=arr[0];
+    for(int i=0; i<n;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    cout<<"Biggest element of the array: "<<max<<endl;
+    cout<<"Smallest element of the array: "<<min<<endl;
 }
