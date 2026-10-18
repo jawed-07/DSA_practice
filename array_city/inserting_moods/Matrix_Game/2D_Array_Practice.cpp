@@ -2,6 +2,8 @@
 using namespace std;
 
 int main(){
+    cout<<"Date: 18 Oct 2026"<<endl;
+    cout<<"*****************"<<endl;
     // 1. Print all elements: Display every element row by row.
     int arr[3][3]={{1,2,3},{4,5,6},{7,8,9}};
     for(int i=0;i<3;i++){
