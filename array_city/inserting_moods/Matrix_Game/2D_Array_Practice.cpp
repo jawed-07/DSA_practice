@@ -28,10 +28,29 @@ int main(){
         }
         cout<<"Sum of column "<<i+1<<" is: "<<sum<<endl;
     }
+    // 4. Find the maximum: Print the largest element in the matrix.
+    int max=arr[0][0];
+    for(int i=0; i<3;i++){
+        for (int j=0;j<3;j++){
+            if(arr[i][j]>max){
+                max=arr[i][j];
+            }
+        }
+    }
+    cout<<"The maximum element in the matrix is: "<<max<<endl;
+    //Let's also find the smallest one
+    int min=arr[0][0];
+    for(int i=0;i<3;i++){
+        for (int j=0;j<3;j++){
+            if (arr[i][j]<min){
+                min=arr[i][j];
+            }
+        }
+    }
+    cout<<"The smallest element in the matrix is: "<<min<<endl;
     return 0;
 }
 
-// 4. Find the maximum: Print the largest element in the matrix.
 // 5. Find the diagonal sum: Calculate \(1+5+9\).
 // More questions:
 // 6. Find the sum of all even elements.
