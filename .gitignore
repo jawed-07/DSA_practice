@@ -1,0 +1,12 @@
+
+# Ignore compiled executable files
+*.exe
+
+# Ignore C++ object files
+*.o
+*.obj
+
+# Ignore debug files
+*.pdb
+*.ilk
+*.out

@@ -37,7 +37,7 @@ int main(){
             }
         }
     }
-    cout<<"The maximum element in the matrix is: "<<max<<endl;
+    cout<<"The biggest element in the matrix is: "<<max<<endl;
     //Let's also find the smallest one
     int min=arr[0][0];
     for(int i=0;i<3;i++){
