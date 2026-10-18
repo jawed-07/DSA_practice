@@ -44,4 +44,15 @@ int main(){
     }
     cout<<endl;
 
+    //print sum, products of all elements of array
+    int sum=0;
+    int pro=1;
+    for(int i=0; i<n;i++){
+        sum+=arr[i];
+        pro*=arr[i];
+    }
+    cout<<"Sum: "<<sum<<endl;
+    cout<<"Product: "<<pro<<endl;
+
+    
 }
