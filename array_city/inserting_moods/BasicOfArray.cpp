@@ -25,4 +25,23 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+
+    //Print even elements of array
+    cout<<"Even Elements of Array: ";
+    for(int i=0;i<n;i++){
+        if(arr[i]%2==0){
+            cout<<arr[i]<<" ";
+        }
+    }
+    cout<<endl;
+
+    //print odd elements of array
+    cout<<"Odd Elements of Array: ";
+    for(int i=0;i<n;i++){
+        if(arr[i]%2!=0){
+            cout<<arr[i]<<" ";
+        }
+    }
+    cout<<endl;
+
 }
