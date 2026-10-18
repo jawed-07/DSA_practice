@@ -54,6 +54,16 @@ int main(){
     cout<<"Sum: "<<sum<<endl;
     cout<<"Product: "<<pro<<endl;
 
+    //Copy Array
+    int arr2[n];
+    cout<<"Copied Array: ";
+    for(int i=0; i<n;i++){
+        arr2[i]=arr[i];
+        cout<<arr2[i]<<" ";
+
+    }
+    cout<<endl;
+
     //print max and min of array
     int max=arr[0];
     int min=arr[0];
