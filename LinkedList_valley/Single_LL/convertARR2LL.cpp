@@ -30,7 +30,7 @@ Node* convertArr2LL(vector<int> &arr){
 }
 
 int main(){
-    vector<int> arr = {1,2,3,4,5};
+    vector<int> arr = {12,45,87,34,90};
     Node* y=convertArr2LL(arr);
     cout<<y->data<<endl;
     return 0;
