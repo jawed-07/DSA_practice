@@ -31,11 +31,12 @@ Node* convertArr2LL(vector<int> &arr){
 
 Node* deleteHead(Node* head){
     if(head==NULL) return head;
-    head->data=head->next->data;
+    // head->data=head->next->data;
     Node* temp=head;
     head=head->next;
     delete temp;
     return head;
+    
 }
 
 void print(Node* head){
