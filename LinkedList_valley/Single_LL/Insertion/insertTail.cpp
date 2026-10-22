@@ -56,7 +56,7 @@ void print(Node* head){
 int main(){
     vector<int> arr = {12,45,87,34,90};
     Node* head=convertArr2LL(arr);
-    head=insertTail(head, 54);
+    head=insertTail(head, 70);
     print(head);
     return 0;
 }
